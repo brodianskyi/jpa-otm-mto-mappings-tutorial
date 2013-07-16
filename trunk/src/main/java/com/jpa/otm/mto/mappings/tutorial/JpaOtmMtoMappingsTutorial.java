@@ -21,12 +21,14 @@ public class JpaOtmMtoMappingsTutorial {
         System.out.println("--- Finding albums ---");
         List<Album> albums = albumService.findAllAlbums();
         for (Album album : albums) {
+            System.out.println(String.format("Found album: %s", album));
             System.out.println(String.format("Album artist: %s", album.getArtist()));
+            System.out.println();
         }
-        System.out.println();
 
         System.out.println("--- Finding artist ---");
         Artist artist = artistService.findArtist(1);
+        System.out.println(String.format("Found artist: %s", artist));
         for (Album album : artist.getAlbums()) {
             System.out.println(String.format("Artist album: %s", album));
         }
