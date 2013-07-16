@@ -15,8 +15,8 @@ public class JpaOtmMtoMappingsTutorial {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JpaOtmMtoMappingsTutorial");
         EntityManager em = emf.createEntityManager();
-        ArtistService artistService = new ArtistService(em);
         AlbumService albumService = new AlbumService(em);
+        ArtistService artistService = new ArtistService(em);
 
         System.out.println("--- Finding albums ---");
         List<Album> albums = albumService.findAllAlbums();
